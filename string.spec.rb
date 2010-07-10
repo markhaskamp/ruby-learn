@@ -2,6 +2,7 @@ require 'spec'
 require 'spec/autorun'
 
 describe String, "methods" do
+
   it "'capitalize' should capitalize the first character of the string" do
     "abcdefg".capitalize.should eql("Abcdefg");
   end
