@@ -1,2 +1,2 @@
 
-spec -c -f specdoc file.spec.rb
+Write RSpec tests as I explore Ruby.
