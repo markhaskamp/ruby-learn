@@ -1,0 +1,2 @@
+
+spec -c -f specdoc file.spec.rb
