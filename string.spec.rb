@@ -11,5 +11,10 @@ describe String, "methods" do
   it "upcase should capitalize all the characters of string" do
     "eddie would go".upcase.should eql("EDDIE WOULD GO");
   end
+
+  it "squeeze replaces all concurrent dupe characters with a single instance of that character" do
+    "eddie would go".squeeze.should eql("edie would go")
+    "foo  too".squeeze.should eql("fo to")
+  end
 end
 
