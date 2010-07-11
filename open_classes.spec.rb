@@ -7,9 +7,19 @@ class String
   end
 end
 
-describe String, "methods" do
+class Fixnum
+  def minutes
+    self * 60
+  end
+end
 
-  it "'yo' should return string 'whatitdo!'" do
+describe "Open Classes" do
+
+  it "'yo' returns string 'whatitdo!'" do
     "foo".yo.should eql 'whatitdo!'
+  end
+
+  it "'minutes' multiplies self by 60" do
+    5.minutes.should eql 300
   end
 end
