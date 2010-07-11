@@ -1,0 +1,44 @@
+(in c:/a_dev/ruby/ruby-learn)
+
+Array
+- '%w' creates an array by splitting string on whitespace
+- 'length' returns number of elements in an array
+- new Array has a length of 0
+- use integer inside brackets, [n] to access array elements
+- negative index number refers to array elements starting from the end (right), -1 is the last element
+- get subarray with [index, number_of_elements]
+- use '<<' to append elements to the end of an array
+
+Array elements can be arbitrary expressions
+- like addition
+- like method calls
+
+Hash
+- literals can be defined thusly '{:key => value, :key2 => value2}
+- use [:key] to access elements of hash
+
+Numeric
+- 'minutes' should raise NoMethodError
+
+Numeric methods
+- 'abs' returns the absolute value of a number
+- 'zero?' returns true if number == 0
+
+Open Classes String
+- 'capitalize' capitalizes the first character of the string
+- 'yo' returns string 'whatitdo!'
+
+Open Classes Numeric
+- 'abs' returns the absolute value of a number
+- 'minutes' multiplies self by 60
+
+String methods
+- 'capitalize' capitalizes the first character of the string
+- 'capitalize' capitalizes only the first character of the first word of the string
+- 'upcase' capitalizes all the characters of the string
+- 'squeeze' replaces all concurrent dupe characters with a single instance of that character
+- 'strip' removes leading and trailing whitespace from the string
+
+Finished in 0.772044 seconds
+
+23 examples, 0 failures
