@@ -16,12 +16,25 @@ describe "Open Classes" do
     end
   end
 
-  it "'yo' returns string 'whatitdo!'" do
-    "foo".yo.should eql 'whatitdo!'
+  describe String do
+    it "'capitalize' capitalizes the first character of the string" do
+      "abcdefg".capitalize.should eql("Abcdefg");
+    end
+
+    it "'yo' returns string 'whatitdo!'" do
+      "foo".yo.should eql 'whatitdo!'
+    end
   end
 
-  it "'minutes' multiplies self by 60" do
-    5.minutes.should eql 300
+  describe Numeric do
+    it "'abs' returns the absolute value of a number" do
+      9.abs.should eql(9)
+      -9.abs.should eql(9)
+    end
+
+    it "'minutes' multiplies self by 60" do
+      5.minutes.should eql 300
+    end
   end
 
 end
