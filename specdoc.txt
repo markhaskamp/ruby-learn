@@ -17,6 +17,7 @@ Array Methods
 - 'include? returns true if the given object is present in the array
 
 Environment Variables
+- $LOAD_PATH is an array of directory paths
 - default $LOAD_PATH includes '.'
 
 Hash
@@ -45,6 +46,6 @@ String methods
 - 'squeeze' replaces all concurrent dupe characters with a single instance of that character
 - 'strip' removes leading and trailing whitespace from the string
 
-Finished in 0.855049 seconds
+Finished in 0.834048 seconds
 
-25 examples, 0 failures
+26 examples, 0 failures
