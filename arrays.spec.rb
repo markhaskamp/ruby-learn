@@ -63,5 +63,10 @@ describe Array do
     end
   end
 
+  describe "Methods" do
+    it "'include? returns true if the given object is present in the array" do
+      @a.include?('eddie').should be_true
+    end
+  end
 
 end

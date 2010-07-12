@@ -13,6 +13,12 @@ Array elements can be arbitrary expressions
 - like addition
 - like method calls
 
+Array Methods
+- 'include? returns true if the given object is present in the array
+
+Environment Variables
+- default $LOAD_PATH includes '.'
+
 Hash
 - literals can be defined thusly '{:key => value, :key2 => value2}
 - use [:key] to access elements of hash
@@ -39,6 +45,6 @@ String methods
 - 'squeeze' replaces all concurrent dupe characters with a single instance of that character
 - 'strip' removes leading and trailing whitespace from the string
 
-Finished in 0.772044 seconds
+Finished in 0.855049 seconds
 
-23 examples, 0 failures
+25 examples, 0 failures
