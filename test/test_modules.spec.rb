@@ -56,20 +56,35 @@ describe "Modules" do
   end
 
   describe "as mixins" do
-    module TimeInSeconds
-      def hours
-        self * 60 * 60
-      end
-    end
+    before :all do
+      module TimeInSeconds
+        def hours
+          self * 60 * 60
+        end
 
-    class Numeric
-      include TimeInSeconds
+        def seconds
+          self
+        end
+
+        def ago
+          previous_time = Time.now.to_i - self
+          Time.at(previous_time)
+        end
+      end
+
+      class Numeric
+        include TimeInSeconds
+      end
     end
 
     it "after including module, module methods are available just like class methods" do
       2.hours.should eql(2 * 60 * 60)
+
+      time1 = Time.now.to_i  # seconds since the epoch
+      5.seconds.ago.to_i.should be_close(time1 - 5, 1)
+      1.hours.ago.to_i.should be_close(time1 - 3600, 2)
     end
-      
+
   end
 end
 
