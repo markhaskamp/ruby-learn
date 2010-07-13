@@ -30,6 +30,9 @@ Modules as namespaces
 - nested classes don't need the Module prefix to refer to Module constants
 - nested classes don't need the Module prefix to refer to other nested classes
 
+Modules as mixins
+- after including module, module methods are available just like class methods
+
 Numeric
 - 'minutes' should raise NoMethodError
 
@@ -52,6 +55,6 @@ String methods
 - 'squeeze' replaces all concurrent dupe characters with a single instance of that character
 - 'strip' removes leading and trailing whitespace from the string
 
-Finished in 1.036059 seconds
+Finished in 1.015058 seconds
 
-30 examples, 0 failures
+31 examples, 0 failures

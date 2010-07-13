@@ -9,7 +9,7 @@ module FooMod
   end
 
   class AClass
-    def aClassMethod
+    def eddie
       'eddie would go'
     end
     
@@ -17,28 +17,19 @@ module FooMod
       PI * r * r
     end
 
-    def kilroy
-      b = BClass.new
-      b.bClassMethod
+    def kilroy_also
+      BClass.new.kilroy
     end
-    
   end
 
   class BClass
-    def bClassMethod
+    def kilroy
       'kilroy was here'
-    end
-
-    def pi
-      PI
     end
   end
 end
 
 describe "Modules" do
-  before :all do
-    include 'Foo'
-  end
   
   describe "as namespaces" do
     it "reference module methods as 'module.method'" do
@@ -47,10 +38,10 @@ describe "Modules" do
 
     it "instantiate a class nested in a Module as 'Module::Class.new'" do
       x = FooMod::AClass.new
-      x.aClassMethod.should eql 'eddie would go'
+      x.eddie.should eql 'eddie would go'
 
       y = FooMod::BClass.new
-      y.bClassMethod.should eql 'kilroy was here'
+      y.kilroy.should eql 'kilroy was here'
     end
 
     it "nested classes don't need the Module prefix to refer to Module constants" do
@@ -60,8 +51,25 @@ describe "Modules" do
 
     it "nested classes don't need the Module prefix to refer to other nested classes" do
       x = FooMod::AClass.new
-      x.kilroy.should eql 'kilroy was here'
+      x.kilroy_also.should eql 'kilroy was here'
     end
+  end
+
+  describe "as mixins" do
+    module TimeInSeconds
+      def hours
+        self * 60 * 60
+      end
+    end
+
+    class Numeric
+      include TimeInSeconds
+    end
+
+    it "after including module, module methods are available just like class methods" do
+      2.hours.should eql(2 * 60 * 60)
+    end
+      
   end
 end
 
