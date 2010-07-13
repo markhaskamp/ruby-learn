@@ -24,6 +24,12 @@ Hash
 - literals can be defined thusly '{:key => value, :key2 => value2}
 - use [:key] to access elements of hash
 
+Modules as namespaces
+- reference module methods as 'module.method'
+- instantiate a class nested in a Module as 'Module::Class.new'
+- nested classes don't need the Module prefix to refer to Module constants
+- nested classes don't need the Module prefix to refer to other nested classes
+
 Numeric
 - 'minutes' should raise NoMethodError
 
@@ -46,6 +52,6 @@ String methods
 - 'squeeze' replaces all concurrent dupe characters with a single instance of that character
 - 'strip' removes leading and trailing whitespace from the string
 
-Finished in 0.834048 seconds
+Finished in 1.036059 seconds
 
-26 examples, 0 failures
+30 examples, 0 failures
