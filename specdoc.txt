@@ -33,6 +33,11 @@ Modules as namespaces
 Modules as mixins
 - after including module, module methods are available just like class methods
 
+Modules mixin with Missiles
+- should get a target
+- launch for real
+- launch a mock
+
 Numeric
 - 'minutes' should raise NoMethodError
 
@@ -55,6 +60,6 @@ String methods
 - 'squeeze' replaces all concurrent dupe characters with a single instance of that character
 - 'strip' removes leading and trailing whitespace from the string
 
-Finished in 1.015058 seconds
+Finished in 1.160067 seconds
 
-31 examples, 0 failures
+34 examples, 0 failures
