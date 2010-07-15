@@ -1,6 +1,7 @@
 require 'spec'
 require 'spec/autorun'
 
+
 module FooMod
   PI = 3.14159
 
@@ -77,7 +78,7 @@ describe "Modules" do
       end
     end
 
-    it "after including module, module methods are available just like class methods" do
+    it "after a class 'include's a module, the module methods are available just like class methods" do
       2.hours.should eql(2 * 60 * 60)
 
       time1 = Time.now.to_i  # seconds since the epoch
@@ -86,40 +87,23 @@ describe "Modules" do
     end
   end
 
-  describe "mixin with Missiles" do
+  describe "mixins with Missiles" do
     before :all do
-
-      module Missile
-        def launch
-          "fire!"
-        end
-      end
-
-      module Missile_Mock
-        def launch
-          "let's don't and say we did"
-        end
-      end
-
-      class Missile_Commands
-        if ENV["TEST"]
-          include Missile_Mock
-        else
-          include Missile
-        end
-      end
+      $LOAD_PATH << './lib'
+      require 'Missile_Commands'
     end
-
-    it "launch for real" do
+    
+    it "include different Modules from a class-level if statement" do
       m = Missile_Commands.new
 
       if ENV["TEST"]
+        m.get_target.should eql "getting target"
         m.launch.should eql "let's don't and say we did"
       else
+        m.get_target.should eql "getting target"
         m.launch.should eql "fire!"
       end
     end
   end
 end
-
 

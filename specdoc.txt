@@ -31,12 +31,10 @@ Modules as namespaces
 - nested classes don't need the Module prefix to refer to other nested classes
 
 Modules as mixins
-- after including module, module methods are available just like class methods
+- after a class 'include's a module, the module methods are available just like class methods
 
-Modules mixin with Missiles
-- should get a target
-- launch for real
-- launch a mock
+Modules mixins with Missiles
+- include different Modules from a class-level if statement
 
 Numeric
 - 'minutes' should raise NoMethodError
@@ -60,6 +58,6 @@ String methods
 - 'squeeze' replaces all concurrent dupe characters with a single instance of that character
 - 'strip' removes leading and trailing whitespace from the string
 
-Finished in 1.160067 seconds
+Finished in 1.115064 seconds
 
-34 examples, 0 failures
+32 examples, 0 failures
