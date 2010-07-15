@@ -102,39 +102,24 @@ describe "Modules" do
       end
 
       class Missile_Commands
-        def self.set_command s
-          if s == :forreal
-            include Missile
-          else
-            include Missile_Mock
-          end
-        end
-        def get_target
-          "getting target"
+        if ENV["TEST"]
+          include Missile_Mock
+        else
+          include Missile
         end
       end
     end
 
-    it "should get a target" do
-      m = Missile_Commands.new
-      m.get_target.should eql "getting target"
-    end
-
     it "launch for real" do
-      Missile_Commands.set_command :forreal
       m = Missile_Commands.new
-      m.launch.should eql "fire!"
-    end
 
-    it "launch a mock" do
-      Missile_Commands.set_command :mock
-      m = Missile_Commands.new
-      m.launch.should eql "let's don't and say we did"
+      if ENV["TEST"]
+        m.launch.should eql "let's don't and say we did"
+      else
+        m.launch.should eql "fire!"
+      end
     end
-
   end
-      
-
 end
 
 
