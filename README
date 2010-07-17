@@ -1,2 +1,11 @@
 
 Write RSpec tests as I explore Ruby.
+
+Inspired by:
+Mike Clark's blog post: Ruby Learning Test #1, #2
+http://www.clarkware.com/cgi/blosxom/2005/03/18#RLT1
+http://clarkware.com/cgi/blosxom/2005/04/08/RLT2
+
+Edgecase Ruby Koans
+http://github.com/edgecase/ruby_koans
+
