@@ -10,4 +10,9 @@ describe "Environment Variables" do
   it "default $LOAD_PATH includes '.'" do
     $LOAD_PATH.include?('.').should be_true
   end
+
+  it "ENV is an object that behaves like a hash of environmant variables" do
+    ENV.class.should eql(Object)
+    ENV['PATH'].should_not eql nil
+  end
 end
