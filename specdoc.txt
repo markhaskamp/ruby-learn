@@ -19,6 +19,7 @@ Array Methods
 Environment Variables
 - $LOAD_PATH is an array of directory paths
 - default $LOAD_PATH includes '.'
+- ENV is an object that behaves like a hash of environmant variables
 
 Hash
 - literals can be defined thusly '{:key => value, :key2 => value2}
@@ -36,12 +37,15 @@ Modules as mixins
 Modules mixins with Missiles
 - include different Modules from a class-level if statement
 
-Numeric
-- 'minutes' should raise NoMethodError
-
 Numeric methods
 - 'abs' returns the absolute value of a number
 - 'zero?' returns true if number == 0
+- 'minutes' should raise NoMethodError
+
+Numeric iterators
+- 'upto' iterates from self to n, inclusive
+- 'downto' iterates from self to n, inclusive
+- 'times' invokes its block (yields) self times
 
 Open Classes String
 - 'capitalize' capitalizes the first character of the string
@@ -58,6 +62,6 @@ String methods
 - 'squeeze' replaces all concurrent dupe characters with a single instance of that character
 - 'strip' removes leading and trailing whitespace from the string
 
-Finished in 1.115064 seconds
+Finished in 1.21307 seconds
 
-32 examples, 0 failures
+36 examples, 0 failures
