@@ -48,6 +48,16 @@ describe Numeric do
       2.times {|x| n += 1}
       n.should eql 2
     end
+
+    it "'times' starts at 0" do
+      n = 42
+      1.times {|x| n = x }
+      n.should eql 0
+
+      n = 0
+      5.times { |x| n += x}
+      n.should eql(0+1+2+3+4)
+    end
   end
 
 end
