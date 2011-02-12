@@ -7,8 +7,8 @@ describe "Environment Variables" do
     $LOAD_PATH.instance_of?(Array).should be_true
   end
 
-  it "default $LOAD_PATH includes '.'" do
-    $LOAD_PATH.include?('.').should be_true
+  it "default $LOAD_PATH does not include '.'" do
+    $LOAD_PATH.include?('.').should be_false
   end
 
   it "ENV is an object that behaves like a hash of environmant variables" do

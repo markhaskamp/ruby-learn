@@ -1,5 +1,5 @@
-require 'lib/Missile.rb'
-require 'lib/Missile_Mock.rb'
+require 'Missile.rb'
+require 'Missile_Mock.rb'
 
 class Missile_Commands
   if ENV["TEST"]
