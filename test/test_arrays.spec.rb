@@ -64,9 +64,30 @@ describe Array do
   end
 
   describe "Methods" do
-    it "'include? returns true if the given object is present in the array" do
-      @a.include?('eddie').should be_true
+		describe "include?" do
+    	it "returns true if the given object is present in the array" do
+     	 @a.include?('eddie').should be_true
+    	end
     end
-  end
 
+		describe "map" do
+			before :each do
+				@map_ary = [1,2,3,5,8,13,20,40,100]
+			end
+
+			describe "is an iterator, where iterated_item and block are the map method arguments" do
+
+				it "example 1" do
+					new_ary = @map_ary.map { |n| n += 1 }
+
+					i = 0
+					@map_ary.each do |n|
+						new_ary[i] = n + 1
+				  end
+				end
+						
+			end
+	  end
+
+	end
 end
